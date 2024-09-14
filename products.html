@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Italiana&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        body{
+
+            background-image: url("https://img.freepik.com/free-photo/shopping-trolleys-packets-tags_23-2147961897.jpg?ga=GA1.1.1111332930.1726161397&semt=ais_hybrid");
+            
+            background-repeat: no-repeat;
+              background-size: auto;
+              background-position: fixed;
+              background-size: cover;
+              font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  
+        
+
+        }
+       div {
+        border: 2px solid ;
+        width: 500px;
+        text-align: center;
+        margin-left: 450px;
+        margin-top: 150px;
+        background-color: rgb(7, 148, 7);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 2px 4px 3px solid white;
+
+
+
+        }
+        div:hover{
+          transform: scale(1.3);
+          transition-duration: 3s;
+
+
+        }
+       img:hover {
+        transform: scale(1.4);
+        transition-duration: 4s;
+        box-shadow: 2px 4px 4px solid white;
+        border-radius: 20px;
+
+
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="div">
+    <img src="" id="image">
+    <h1 id="title"></h1>
+    <h4 id="category"></h4>
+    <p id="description"></p>
+    <h4 id="price"></h4>
+    <h5 id="rating"></h5>
+    </div>
+
+
+
+
+
+
+    <script>
+     var data =localStorage.getItem("FakeData")
+     var data1=JSON.parse(data)
+     console.log(data1)
+
+     var div=document.getElementById("div")
+     var image=document.getElementById("image")
+     image.setAttribute("src", data1["image"])
+     image.style.width="100px"
+
+     var title=document.getElementById("title")
+     title.innerText=` Title:${data1["title"]}`
+
+     var category=document.getElementById("category")
+     category.innerText=`Category:${data1["category"]}`
+
+     var description=document.getElementById("description")
+     description.innerText=`Description:${data1["description"]}`
+
+     var price=document.getElementById("price")
+     price.innerText=`Price:${data1["price"]}`
+
+
+     var rating=document.getElementById("rating")
+     rating.innerText=`rating:${data1["rating"]["rate"]}`
+
+   
+
+
+    
+     
+       
+    </script>
+</body>
+</html>
